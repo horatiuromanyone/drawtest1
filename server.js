@@ -1,4 +1,13 @@
 const WebSocket = require('ws');
+const express = require('express');
+
+// start an express server on port 80
+const app = express();
+app.use(express.static('public'));
+app.listen(80, () => {
+  console.log('Express server started on port 80');
+});
+
 
 const PORT = 8080;
 
