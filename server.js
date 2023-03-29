@@ -14,6 +14,9 @@ server.on('connection', (socket) => {
   // Handle incoming messages
   socket.on('message', (message) => {
     console.log('Received message:', message);
+    // the message is a buffer. we should convert it to a string
+    const b = Buffer.from(message);
+    console.log(b.toString('utf8'));
 
     // Broadcast message to all connected clients
     server.clients.forEach((client) => {
